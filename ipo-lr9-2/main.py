@@ -3,3 +3,4 @@ try:
     collision.isCorrectRect()
 except:
     print("Успешно завершено")
+
