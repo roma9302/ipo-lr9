@@ -16,9 +16,6 @@ numY2=float(input('Введите значение для y2 '))
 num1 = [(numX1,numY1),(numX2,numY2)]
 
 
-isCorrectRect(num1)
-
-
 sef=isCorrectRect(num1)
 print(sef)
 
