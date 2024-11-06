@@ -1,3 +1,4 @@
+#Импорт пакета коллизион
 import collision
 try:
     collision.isCorrectRect()
