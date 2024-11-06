@@ -18,3 +18,4 @@ isCorrectRect(num1)
 sef=isCorrectRect(num1)
 print(sef)
 
+
