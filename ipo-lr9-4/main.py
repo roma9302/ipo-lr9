@@ -1,5 +1,5 @@
 import collision
 try:
-    collision.isCollisionRect()
+    collision.intersectionAreaRect()
 except:
     print("Завершено")
