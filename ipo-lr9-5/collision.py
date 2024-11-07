@@ -14,8 +14,7 @@ def intersectionAreaMultiRect(rectangles):
 
     # Генерация всех точек для каждого прямоугольника
     for rect in rectangles:
-        points = [(x, y) for x in range(int(rect[0][0]), int(rect[1][0])) 
-                          for y in range(int(rect[0][1]), int(rect[1][1]))]
+        points = [(x, y) for x in range(int(rect[0][0]), int(rect[1][0]))   for y in range(int(rect[0][1]), int(rect[1][1]))]
         all_points.extend(points)  
 
     #Уникальные точки
