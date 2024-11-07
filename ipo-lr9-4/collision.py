@@ -1,6 +1,6 @@
 def intersectionAreaRect(list1,list2):
 
-    id_exc= 0  #Переменная индекса ошибки
+    id_exc= 0  #Переменная индекса прямоугольника с ошибкой
     correct_error = False  #Проверка на корректность ввода
     intersection=[]  #Список всех пересечений
     count_inter=0  #Площадь пересечения в клетках
