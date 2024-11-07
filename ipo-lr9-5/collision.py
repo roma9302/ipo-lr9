@@ -19,10 +19,10 @@ def intersectionAreaMultiRect(rectangles):
         all_points.extend(points)  
 
     #Уникальные точки
-    unique_points = set(all_points)
+    unique = set(all_points)
 
     # сколько раз каждая точка встречается
-    for point in unique_points:
+    for point in unique:
         count = all_points.count(point)
         if count == 2:  
             result.append(point)
