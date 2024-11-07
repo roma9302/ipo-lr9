@@ -1,6 +1,6 @@
 def intersectionAreaRect(list1,list2):
 
-    id_exc= 0  #Переменная индекса прямоугольника с ошибкой
+    id_exc= 0  #Переменная индекса ошибки
     correct_error = False  #Проверка на корректность ввода
     intersection=[]  #Список всех пересечений
     count_inter=0  #Площадь пересечения в клетках
@@ -37,12 +37,9 @@ def intersectionAreaRect(list1,list2):
         print(all_points_list2)
         for i in range(len(all_points_list1)):
             for j in range(len(all_points_list2)):
-                if  all_points_list1[i] == all_points_list2[j]  or  all_points_list1[i] == all_points_list2[j]:  #Проверка пересечений для 1 прмямоугольника
+                if  all_points_list1[i] == all_points_list2[j]  or  all_points_list1[i] == all_points_list2[j]:  #Проверка пересечений для двух прмямоугольников
                     intersection.append(all_points_list1[i])
                     count_inter+=1
-                    if  all_points_list2[j] in all_points_list1[i]  or  all_points_list2[j] in all_points_list1[i]: #Проверка пересечений для 2 прямоугольника
-                        intersection.append(all_points_list2[j])
-                        count_inter+=1
 
         return count_inter
     else:                  #Возвращение значений
@@ -76,11 +73,4 @@ list2 = [(numX3,numY3),(numX4,numY4)]
 #Вызов функции и проверка вывода функции
 sed=intersectionAreaRect(list1,list2)
 print(sed)
-
-
-
-
-
-
-
 
