@@ -37,7 +37,7 @@ def intersectionAreaRect(list1,list2):
         print(all_points_list2)
         for i in range(len(all_points_list1)):
             for j in range(len(all_points_list2)):
-                if  all_points_list1[i] == all_points_list2[j]  or  all_points_list1[i] == all_points_list2[j]:  #Проверка пересечений для двух прмямоугольников
+                if  all_points_list1[i] == all_points_list2[j]:  #Проверка пересечений для двух прмямоугольников
                     intersection.append(all_points_list1[i])
                     count_inter+=1
 
