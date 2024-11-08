@@ -7,7 +7,6 @@ def intersectionAreaRect(list1,list2):
 
 
 
-
 #Класс  для нашей ошибки
     class RectCorrectError(Exception):
         pass
