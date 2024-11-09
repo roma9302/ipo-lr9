@@ -15,11 +15,11 @@ def intersectionAreaRect(list1,list2):
 
  
 #обработка корректности ввода
-    if  list1[0][0] > list1[1][0] or list1[0][1] > list1[1][1] :
+    if  list1[0][0] >= list1[1][0] or list1[0][1] >= list1[1][1] :
         id_exc += 1
         correct_error =  True
     
-    elif list2[0][0] > list2[1][0] or list2[0][1]  >  list2[1][1]:
+    elif list2[0][0] >= list2[1][0] or list2[0][1]  >=  list2[1][1]:
         id_exc += 2 
         correct_error = True
 
