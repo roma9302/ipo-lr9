@@ -39,7 +39,6 @@ def isCollisionRect(list1,list2):
          
          
         
-    
 
 
 #Сбор данныхь для 1 прямоугольника
