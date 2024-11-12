@@ -48,28 +48,3 @@ def intersectionAreaRect(list1,list2):
 
 
          
-         
-        
-    
-
-
-#Сбор данныхь для 1 прямоугольника
-numX1=float(input('Введите значение для x1 '))
-numY1=float(input('Введите значение для y1 '))
-numX2=float(input('Введите значение для x2 '))
-numY2=float(input('Введите значение для y2 '))
-list1 = [(numX1,numY1),(numX2,numY2)]
-
-#Сбор данных для 2 прямоугольника
-numX3=float(input('Введите значение для x3 '))
-numY3=float(input('Введите значение для y3 '))
-numX4=float(input('Введите значение для x4 '))
-numY4=float(input('Введите значение для y4 '))
-list2 = [(numX3,numY3),(numX4,numY4)]
-
-
-
-
-#Вызов функции и проверка вывода функции
-sed=intersectionAreaRect(list1,list2)
-print(sed)
