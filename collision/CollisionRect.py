@@ -8,7 +8,6 @@ def isCollisionRect(list1,list2):
         pass
 
 
-
  
 #обработка корректности ввода
     if  list1[0][0] >= list1[1][0] or list1[0][1] >= list1[1][1] :
