@@ -3,6 +3,7 @@ from collision.intersectAreaRect import intersectionAreaRect
 from collision.CollisionRect import isCollisionRect
 from collision.intersectAreaMultiRect import intersectionAreaMultiRect
 
+
 def main():
     while True:
 
