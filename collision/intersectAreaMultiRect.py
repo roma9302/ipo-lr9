@@ -26,13 +26,3 @@ def intersectionAreaMultiRect(rectangles):
         if count == 2:  
             result.append(point)
     return len(result)
-
-rectangles = [
-    [(-3, 1), (9, 10)],
-    [(-7, 0), (13, 12)],
-    [(0, 0), (5, 5)],
-    [(2, 2), (7, 7)]
-]
-
-result = intersectionAreaMultiRect(rectangles)
-print("Площадь пересечения:", result)
