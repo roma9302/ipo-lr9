@@ -5,4 +5,3 @@ def isCorrectRect(c):
         return False
 
 
-
