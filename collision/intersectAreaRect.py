@@ -1,50 +1,38 @@
-def intersectionAreaRect(list1,list2):
+def intersectionAreaRect(rectangles):
 
-    id_exc= 0  #Переменная индекса ошибки
-    correct_error = False  #Проверка на корректность ввода
-    intersection=[]  #Список всех пересечений
-    count_inter=0  #Площадь пересечения в клетках
+    area = 0  
 
+    #корректность 
+    try:
+        isCorrectRect(rectangles)
+    except RectCorrectError as e:
+        print(e)
+        return 0  
 
+    n = len(rectangles) #колво прямоугольничков 
 
+    for i in range(n):
+        for j in range(i + 1, n):
+            # Границы первого прямоугольника
+            x1, y1 = rectangles[i][0]
+            x2, y2 = rectangles[i][1]
 
-#Класс  для нашей ошибки
-    class RectCorrectError(Exception):
-        pass
+            # Границы второго прямоугольника
+            x3, y3 = rectangles[j][0]
+            x4, y4 = rectangles[j][1]
 
+            # Границы пересечения
+            left = max(x1, x3)
+            top = min(y2, y4)
+            right = min(x2, x4)
+            bottom = max(y1, y3)
 
+            # Ширина и высота пересечения
+            width = right - left
+            height = top - bottom
 
- 
-#обработка корректности ввода
-    if  list1[0][0] >= list1[1][0] or list1[0][1] >= list1[1][1] :
-        id_exc += 1
-        correct_error =  True
-    
-    elif list2[0][0] >= list2[1][0] or list2[0][1]  >=  list2[1][1]:
-        id_exc += 2 
-        correct_error = True
-
-#Вызов ошибки при некоррекитном вводе
-    if correct_error :
-            raise RectCorrectError(f'{id_exc}й прямоугольник некоректный')
-    
-    
-#Нахождение пересеченеия
-    elif correct_error == False:
-        all_points_list1=[(i,j) for i in range(int(numX1),int(numX2)) for j in range(int(numY1),int(numY2))]  #Список для всего поля 1 прямоугольника
-        all_points_list2=[(i,j) for i in range(int(numX3),int(numX4)) for j in range(int(numY3),int(numY4))]  #Список для всего поля 2 прямоугольника
-        print(all_points_list1)
-        print(all_points_list2)
-        for i in range(len(all_points_list1)):
-            for j in range(len(all_points_list2)):
-                if  all_points_list1[i] == all_points_list2[j]:  #Проверка пересечений для двух прмямоугольников
-                    intersection.append(all_points_list1[i])
-                    count_inter+=1
-
-        return count_inter
-    else:                  #Возвращение значений
-        return 0
-
-
-
-        
+            # площадь пересечения
+            if width > 0 and height > 0:
+            	return width * height
+            else:
+            	return False
