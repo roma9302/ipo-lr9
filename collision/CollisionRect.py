@@ -1,5 +1,4 @@
 def isCollisionRect(rectangles):
-
     try:
         isCorrectRect(rectangles)
     except RectCorrectError as e:
