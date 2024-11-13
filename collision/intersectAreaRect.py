@@ -1,15 +1,17 @@
-def intersectionAreaRect(rectangles):
+from .CorrectRec import isCorrectRect, RectCorrectError
 
+def intersectionAreaRect(rectangles):
     area = 0  
 
-    #корректность 
+    # Проверка корректности
     try:
         isCorrectRect(rectangles)
     except RectCorrectError as e:
         print(e)
         return 0  
 
-    n = len(rectangles) #колво прямоугольничков 
+    n = len(rectangles)  # Количество прямоугольников 
+    is_intersection = False  #Есть ли пересечения
 
     for i in range(n):
         for j in range(i + 1, n):
@@ -31,8 +33,12 @@ def intersectionAreaRect(rectangles):
             width = right - left
             height = top - bottom
 
-            # площадь пересечения
+            # Площадь пересечения
             if width > 0 and height > 0:
-            	return width * height
-            else:
-            	return False
+                area += width * height  
+                is_intersection = True  
+
+    if not is_intersection:
+        return False  
+
+    return area  
