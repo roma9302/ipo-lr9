@@ -39,6 +39,6 @@ def intersectionAreaRect(rectangles):
                 is_intersection = True  
 
     if not is_intersection:
-        return False  
+        return 0
 
     return area  
