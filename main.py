@@ -33,6 +33,7 @@ def main():
                 print(isCorrectRect(rectangles))
             except RectCorrectError as e:
                 print(e)
+            return False
               
 
         elif number == 3:
