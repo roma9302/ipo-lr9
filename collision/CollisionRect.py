@@ -1,39 +1,36 @@
-def isCollisionRect(list1,list2):
-    id_exc= 0
-    correct_error = False
+def isCollisionRect(rectangles):
 
+    try:
+        isCorrectRect(rectangles)
+    except RectCorrectError as e:
+        print(e)
+        return False
+        
+        
+    n = len(rectangles)
 
-#Класс  для нашей ошибки
-    class RectCorrectError(Exception):
-        pass
+    for i in range(n):
+        for j in range(i + 1, n):
+            #  первый прямоугольник
+            x1, y1 = rectangles[i][0]
+            x2, y2 = rectangles[i][1]
 
+            #  второй прямоугольник
+            x3, y3 = rectangles[j][0]
+            x4, y4 = rectangles[j][1]
 
- 
-#обработка корректности ввода
-    if  list1[0][0] >= list1[1][0] or list1[0][1] >= list1[1][1] :
-        id_exc += 1
-        correct_error =  True
-    
-    elif list2[0][0] >= list2[1][0] or list2[0][1]  >=  list2[1][1]:
-        id_exc += 2 
-        correct_error = True
+            # Границы пересечения
+            left = max(x1, x3)
+            top = min(y2, y4)
+            right = min(x2, x4)
+            bottom = max(y1, y3)
 
-#Вызов ошибки при некоррекитном вводе
-    if correct_error :
-            raise RectCorrectError(f'{id_exc}й прямоугольник некоректный')
-    
-    
-#Нахождение пересеченеия
-    elif correct_error == False:
-        all_points_list1=[(i,j) for i in range(int(numX1),int(numX2)+1) for j in range(int(numY1),int(numY2)+1)]  #Список для всего поля 1 прямоугольника
-        all_points_list2=[(i,j) for i in range(int(numX3),int(numX4)+1) for j in range(int(numY3),int(numY4)+1)]  #Список для всего поля 2 прямоугольника
-        print(all_points_list1)
-        print(all_points_list2)
-        if (list2[0] in all_points_list1  or  list2[1] in all_points_list1) or (list1[0] in all_points_list2  or  list1[1] in all_points_list2) :  #Проверка нахождения 1 прямоугольника во 2 или наоборот
-            return True
-        else:
-            return False
+            # Ширина и высота пересечения
+            width = right - left
+            height = top - bottom
 
-
-         
-         
+            # пересекается или нет
+            if width > 0 and height > 0:
+            	return True
+            else:
+            	return False
