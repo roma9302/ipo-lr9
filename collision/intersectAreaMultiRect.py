@@ -22,4 +22,3 @@ def intersectionAreaMultiRect(rectangles):
         if count >= 2 and point not in result:  
             result.append(point)
     return len(result)
-
