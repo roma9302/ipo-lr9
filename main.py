@@ -1,4 +1,4 @@
-from collision.CorrectRec import isCorrectRect
+from collision.CorrectRec import isCorrectRect , RectCorrectError
 from collision.intersectAreaRect import intersectionAreaRect
 from collision.CollisionRect import isCollisionRect
 from collision.intersectAreaMultiRect import intersectionAreaMultiRect
@@ -14,23 +14,25 @@ def main():
             y1 = float(input('Введите y1: '))
             x2 = float(input('Введите x2: '))
             y2 = float(input('Введите y2: '))
-            rect1 = [(x1, y1), (x2, y2)]
-
             x3 = float(input('Введите x3: '))
             y3 = float(input('Введите y3: '))
             x4 = float(input('Введите x4: '))
             y4 = float(input('Введите y4: '))
-            rect2 = [(x3, y3), (x4, y4)]
-            print(intersectionAreaRect(rect1, rect2))
+            rectangles = [[(x1, y1), (x2, y2) ],[(x3, y3), (x4, y4)]]
+            print(intersectionAreaRect(rectangles))
 
 
         elif number == 2:
+            rectangles=[]
             x1 = float(input('Введите x1: '))
             y1 = float(input('Введите y1: '))
             x2 = float(input('Введите x2: '))
             y2 = float(input('Введите y2: '))
-            rect = [(x1, y1), (x2, y2)]
-            print(isCorrectRect(rect))
+            rectangles.append([(x1, y1), (x2, y2)])  
+            try:
+                print(isCorrectRect(rectangles))
+            except RectCorrectError as e:
+                print(e)
               
 
         elif number == 3:
@@ -38,14 +40,12 @@ def main():
             y1 = float(input('Введите y1: '))
             x2 = float(input('Введите x2: '))
             y2 = float(input('Введите y2: '))
-            rect1 = [(x1, y1), (x2, y2)]
-
             x3 = float(input('Введите x3: '))
             y3 = float(input('Введите y3: '))
             x4 = float(input('Введите x4: '))
             y4 = float(input('Введите y4: '))
-            rect2 = [(x3, y3), (x4, y4)]
-            print(isCollisionRect(rect1, rect2))
+            rectangles = [[(x1, y1), (x2, y2)],[(x3, y3), (x4, y4)]]
+            print(isCollisionRect(rectangles))
 
 
         elif number == 4:
