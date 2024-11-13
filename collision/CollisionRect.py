@@ -1,3 +1,6 @@
+from .CorrectRec import isCorrectRect, RectCorrectError
+
+
 def isCollisionRect(rectangles):
     try:
         isCorrectRect(rectangles)
@@ -5,16 +8,15 @@ def isCollisionRect(rectangles):
         print(e)
         return False
         
-        
     n = len(rectangles)
-    area=0
+    
     for i in range(n):
         for j in range(i + 1, n):
-            #  первый прямоугольник
+            # Первый прямоугольник
             x1, y1 = rectangles[i][0]
             x2, y2 = rectangles[i][1]
 
-            #  второй прямоугольник
+            # Второй прямоугольник
             x3, y3 = rectangles[j][0]
             x4, y4 = rectangles[j][1]
 
@@ -28,8 +30,8 @@ def isCollisionRect(rectangles):
             width = right - left
             height = top - bottom
 
-            # пересекается или нет
+            # Проверяем пересечение
             if width > 0 and height > 0:
-            	return True
-            else:
-            	return False
+                return True  
+
+    return False  
