@@ -33,7 +33,7 @@ def main():
                 print(isCorrectRect(rectangles))
             except RectCorrectError as e:
                 print(e)
-            return False
+
               
 
         elif number == 3:
@@ -70,6 +70,6 @@ def main():
             print("Выход")
             break
         else:
-            print(f"Вы ввели {number} .Введите число от 1 до 5")
+            print(f"Вы ввели {number} . Чтобы продолжите введите число от 1 до 5")
 
 main()
