@@ -1,4 +1,4 @@
-def isCorrectRect():
+def isCorrectRect(rectangles):
     counter = 0 #показывает, в каком из прямоугольниов ошибка 
     
     class RectCorrectError(Exception):  #Класс для ошибки 
