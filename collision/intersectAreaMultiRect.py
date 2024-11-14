@@ -1,6 +1,6 @@
-from collision.CorrectRec import isCorrectRect , RectCorrectError
-def intersectionAreaMultiRect(rectangles):
+from collision.CorrectRec import isCorrectRect, RectCorrectError
 
+def intersectionAreaMultiRect(rectangles):
     all_points = []  
     result = []
     try:
@@ -8,17 +8,23 @@ def intersectionAreaMultiRect(rectangles):
     except RectCorrectError as e:
         print(e)
         return 0  
-    #  все точки для каждого прямоугольника
+
+    # из флот в инт и перебор этих точек
     for rect in rectangles:
-        points = [(x, y) for x in range(int(rect[0][0]), int(rect[1][0]))   for y in range(int(rect[0][1]), int(rect[1][1]))]
+        points = [(int(x * 10), int(y * 10)) for x in range(int(rect[0][0] * 10), int(rect[1][0] * 10)) 
+                                                        for y in range(int(rect[0][1] * 10), int(rect[1][1] * 10))]
         all_points.extend(points)  
 
-    #Уникальные точки
+    # Уникальные точки
     unique = set(all_points)
 
-    # сколько раз каждая точка встречается
+    # Сколько раз каждая точка встречается
     for point in unique:
         count = all_points.count(point)
         if count >= 2 and point not in result:  
             result.append(point)
-    return len(result)
+    
+    # Площадь пересечения 
+    return len(result) / 100
+
+
