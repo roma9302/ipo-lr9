@@ -11,7 +11,7 @@ def intersectionAreaMultiRect(rectangles):
 
     # из флот в инт и перебор этих точек
     for rect in rectangles:
-        points = [(int(x * 10), int(y * 10)) for x in range(int(rect[0][0] * 10), int(rect[1][0] * 10)) 
+        points = [(int(x), int(y)) for x in range(int(rect[0][0] * 10), int(rect[1][0] * 10)) 
                                                         for y in range(int(rect[0][1] * 10), int(rect[1][1] * 10))]
         all_points.extend(points)  
 
