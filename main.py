@@ -18,7 +18,7 @@ def main():
             y3 = float(input('Введите y3: '))
             x4 = float(input('Введите x4: '))
             y4 = float(input('Введите y4: '))
-            rectangles = [[(x1, y1), (x2, y2) ],[(x3, y3), (x4, y4)]]
+            rectangles = [(x1, y1), (x2, y2) ],[(x3, y3), (x4, y4)]
             print(intersectionAreaRect(rectangles))
 
 
@@ -44,7 +44,7 @@ def main():
             y3 = float(input('Введите y3: '))
             x4 = float(input('Введите x4: '))
             y4 = float(input('Введите y4: '))
-            rectangles = [[(x1, y1), (x2, y2)],[(x3, y3), (x4, y4)]]
+            rectangles = [(x1, y1), (x2, y2)],[(x3, y3), (x4, y4)]
             print(isCollisionRect(rectangles))
 
 
