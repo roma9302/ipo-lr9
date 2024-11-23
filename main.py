@@ -23,11 +23,12 @@ def main():
 
 
         elif number == 2:
+            rectangles=[]
             x1 = float(input('Введите x1: '))
             y1 = float(input('Введите y1: '))
             x2 = float(input('Введите x2: '))
             y2 = float(input('Введите y2: '))
-            rectangles = [(x1, y1), (x2, y2)]
+            rectangles.append([(x1, y1), (x2, y2)])
             try:
                 print(isCorrectRect(rectangles))
             except RectCorrectError as e:
